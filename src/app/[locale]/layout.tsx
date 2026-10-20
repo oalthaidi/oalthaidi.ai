@@ -8,6 +8,7 @@ import { Enhancements } from "@/components/motion/Enhancements";
 import { site } from "@/config/site";
 import { getContent } from "@/content";
 import { directionOf, isLocale, locales } from "@/i18n/config";
+import { alternateLanguages, localePath } from "@/i18n/paths";
 import { socialMetadata } from "@/lib/seo";
 
 // Styles: tokens first, then base, then components (order matters for the cascade).
@@ -55,15 +56,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: { default: meta.title, template: `%s | ${meta.personName}` },
     description: meta.description,
     alternates: {
-      canonical: `/${locale}`,
-      languages: { ar: "/ar", en: "/en", "x-default": "/ar" },
+      canonical: localePath(locale),
+      languages: alternateLanguages(),
     },
     ...socialMetadata({
       locale,
       siteName: meta.personName,
       title: meta.title,
       description: meta.description,
-      path: `/${locale}`,
+      path: localePath(locale),
     }),
   };
 }

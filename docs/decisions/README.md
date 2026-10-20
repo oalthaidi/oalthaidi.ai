@@ -11,6 +11,7 @@ One file per significant decision: the context, what was decided, and what it co
 | [0005](0005-security-headers.md) | Baseline security headers now, full CSP in phase 2 | Accepted |
 | [0006](0006-plain-css-with-tokens.md) | Plain CSS with design tokens instead of Tailwind | Accepted |
 | [0007](0007-guided-tour-behind-hash.md) | Investor tour hidden behind `#tour` | Accepted |
+| [0008](0008-arabic-at-root.md) | Arabic at the root, English under `/en` | Accepted |
 
 Template:
 

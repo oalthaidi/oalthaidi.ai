@@ -12,6 +12,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { site } from "@/config/site";
 import { getContent } from "@/content";
 import { isLocale } from "@/i18n/config";
+import { localePath } from "@/i18n/paths";
 
 /** Home page: the sections in reading order. Sections alternate black / grey. */
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
@@ -27,7 +28,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           "@type": "Person",
           name: content.meta.personName,
           jobTitle: content.meta.jobTitle,
-          url: `${site.url}/${locale}`,
+          url: `${site.url}${localePath(locale)}`,
           image: `${site.url}${site.portrait.src}`,
           email: `mailto:${site.email}`,
           telephone: site.phoneE164,

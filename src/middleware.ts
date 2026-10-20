@@ -1,31 +1,19 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { defaultLocale, isLocale, pickLocale } from "@/i18n/config";
-import { isLinkPreviewBot } from "@/lib/bots";
+import { routeRequest } from "@/i18n/paths";
 
 /**
- * Locale routing: every page lives under /ar or /en.
- *
- * - Visitors on a path without a locale are redirected to their preferred
- *   language (from the browser), defaulting to Arabic.
- * - Link-preview crawlers (WhatsApp, LinkedIn, X…) get the Arabic page
- *   served directly at the same URL, because some of them do not follow
- *   redirects and would show no preview card.
+ * Locale routing (rules in src/i18n/paths.ts):
+ * - "/…"     → served as the Arabic page (internal rewrite to /ar/…)
+ * - "/en/…"  → served as is
+ * - "/ar/…"  → permanent redirect (308) to the root form, for old links
  */
 export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
-  const firstSegment = pathname.split("/")[1];
-  if (isLocale(firstSegment)) return NextResponse.next();
+  const decision = routeRequest(request.nextUrl.pathname);
+  if (decision.action === "next") return NextResponse.next();
 
   const url = request.nextUrl.clone();
-  const rest = pathname === "/" ? "" : pathname;
-
-  if (isLinkPreviewBot(request.headers.get("user-agent"))) {
-    url.pathname = `/${defaultLocale}${rest}`;
-    return NextResponse.rewrite(url);
-  }
-
-  url.pathname = `/${pickLocale(request.headers.get("accept-language"))}${rest}`;
-  return NextResponse.redirect(url);
+  url.pathname = decision.pathname;
+  return decision.action === "rewrite" ? NextResponse.rewrite(url) : NextResponse.redirect(url, 308);
 }
 
 export const config = {

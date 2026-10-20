@@ -15,7 +15,7 @@ interface SocialInput {
   siteName: string;
   title: string;
   description: string;
-  /** Path after the domain, e.g. "/ar/programs/creative-teacher". */
+  /** Path after the domain, e.g. "/programs/creative-teacher" or "/en/privacy". */
   path: string;
 }
 

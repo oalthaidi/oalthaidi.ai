@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Mark } from "@/components/brand/Mark";
 import type { Locale } from "@/i18n/config";
+import { localePath } from "@/i18n/paths";
 import type { SiteContent } from "@/content/types";
 
 interface SiteFooterProps {
@@ -20,7 +21,7 @@ export function SiteFooter({ locale, brandName, footer }: SiteFooterProps) {
         </span>
         <span>{footer.tagline}</span>
         <span>
-          <Link href={`/${locale}/privacy`}>{footer.privacy}</Link> · © {year} {footer.rights}
+          <Link href={localePath(locale, "/privacy")}>{footer.privacy}</Link> · © {year} {footer.rights}
         </span>
       </div>
     </footer>

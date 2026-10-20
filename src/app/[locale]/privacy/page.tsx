@@ -2,16 +2,17 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getContent } from "@/content";
 import { isLocale } from "@/i18n/config";
+import { alternateLanguages, localePath } from "@/i18n/paths";
 import { socialMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   const { privacy, meta } = getContent(locale);
-  const path = `/${locale}/privacy`;
+  const path = localePath(locale, "/privacy");
   return {
     title: privacy.title,
-    alternates: { canonical: path, languages: { ar: "/ar/privacy", en: "/en/privacy" } },
+    alternates: { canonical: path, languages: alternateLanguages("/privacy") },
     ...socialMetadata({ locale, siteName: meta.personName, title: `${privacy.title} | ${meta.personName}`, description: meta.description, path }),
   };
 }
