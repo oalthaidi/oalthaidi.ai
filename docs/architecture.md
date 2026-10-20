@@ -15,7 +15,7 @@ Visitor ──► Cloudflare (DNS, protection; planned) ──► Vercel ──�
                                                hydrate client components only
 ```
 
-1. `src/middleware.ts` makes sure every URL starts with a supported locale. It reads `Accept-Language` through `pickLocale()` and defaults to Arabic.
+1. `src/middleware.ts` makes sure every URL starts with a supported locale. It reads `Accept-Language` through `pickLocale()` and defaults to Arabic. Link-preview crawlers (WhatsApp, LinkedIn, X…, see `src/lib/bots.ts`) are served the Arabic page at the same URL instead of a redirect, so sharing the bare domain shows a preview card. Social metadata for every page comes from `socialMetadata()` in `src/lib/seo.ts`.
 2. `src/app/[locale]/layout.tsx` sets `lang` and `dir`, loads fonts and styles, and renders the header, footer and page-wide effects.
 3. Pages read text with `getContent(locale)` from `src/content/`. There is no runtime data source in phase 1, so every page is statically generated (`generateStaticParams`).
 
