@@ -5,15 +5,16 @@ All notable changes to this project. Format based on [Keep a Changelog](https://
 ## [Unreleased]
 
 ### Changed
+- Production domain set to `oalthaidi.com`; deployment guide updated for GoDaddy DNS.
 - English surname corrected to **Al-Thaidi** across the site, metadata and docs; portrait file renamed to `omar-althaidi.jpg`.
 
 ### Fixed
 - Canonical links, sitemap and social-card URLs pointed to `localhost:3000` on Vercel. The site URL now falls back to Vercel's production URL when `NEXT_PUBLIC_SITE_URL` is not set.
 
 ### To do before launch
+- Confirm `https://oalthaidi.com/sitemap.xml` lists the custom domain after DNS is valid and production is redeployed.
 - Review every `REVIEW` comment in `src/content/ar.ts` and `src/content/en.ts`.
 - Confirm session start times (currently 18:00 Kuwait as a placeholder).
-- Set `NEXT_PUBLIC_SITE_URL` once the domain is chosen.
 - Lawyer review of the privacy policy.
 
 ## [0.1.0] — 2026-10-20

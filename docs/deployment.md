@@ -10,17 +10,21 @@ The site deploys to **Vercel** from GitHub. Every push to `main` goes to product
 
    | Name | Value |
    | --- | --- |
-   | `NEXT_PUBLIC_SITE_URL` | `https://<your-domain>`. Optional until the domain exists: without it the site uses Vercel's production URL automatically. |
+   | `NEXT_PUBLIC_SITE_URL` | `https://<your-domain>`. Optional: without it the site uses the project's production domain automatically. |
 
 4. Deploy. The first build is the first full `next build` of this project; check the build log.
 5. Plan: Vercel's free Hobby plan is for non-commercial use only. Switch to **Pro** before the site is used commercially.
 
 ## Custom domain
 
-1. Buy the domain (Cloudflare Registrar recommended; see the technical plan).
-2. Vercel → Project → Settings → Domains → add the domain and `www`.
-3. Add the DNS records Vercel shows. With Cloudflare DNS, set the records to **DNS only** at first, confirm the site works, then decide on proxying.
-4. Update `NEXT_PUBLIC_SITE_URL` and redeploy.
+Production domain: **oalthaidi.com** (registered at GoDaddy, DNS managed at GoDaddy).
+
+1. Vercel → Project → Settings → Domains → add `oalthaidi.com` and accept the suggested `www.oalthaidi.com` redirect. Keep `oalthaidi.com` as the primary domain.
+2. GoDaddy → My Products → the domain → **DNS**. Do not change the nameservers.
+   - Edit the `A` record named `@` to the value Vercel shows (remove any other `A` or `AAAA` records named `@`).
+   - Edit the `CNAME` record named `www` to the project-specific value Vercel shows.
+3. Wait until Vercel shows **Valid Configuration**; it issues the HTTPS certificate automatically.
+4. Redeploy production once (merge any change, or Deployments → Redeploy). The build reads `VERCEL_PROJECT_PRODUCTION_URL`, which Vercel sets to the shortest custom production domain, so canonical links, the sitemap and social cards switch to `https://oalthaidi.com` with no code change. `NEXT_PUBLIC_SITE_URL` is only needed to override that choice.
 
 ## Branch workflow
 
