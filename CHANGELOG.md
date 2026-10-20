@@ -4,6 +4,9 @@ All notable changes to this project. Format based on [Keep a Changelog](https://
 
 ## [Unreleased]
 
+### Changed
+- English surname corrected to **Al-Thaidi** across the site, metadata and docs; portrait file renamed to `omar-althaidi.jpg`.
+
 ### Fixed
 - Canonical links, sitemap and social-card URLs pointed to `localhost:3000` on Vercel. The site URL now falls back to Vercel's production URL when `NEXT_PUBLIC_SITE_URL` is not set.
 

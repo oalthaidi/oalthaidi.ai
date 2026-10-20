@@ -12,10 +12,10 @@ const GT = "https://globaltrainig.com/courses";
 export const en: SiteContent = {
   locale: "en",
   meta: {
-    title: "Eng. Omar Al-Dhaidi | AI Digital Transformation Consultant",
+    title: "Eng. Omar Al-Thaidi | AI Digital Transformation Consultant",
     description:
       "Engineer and certified AI trainer based in Kuwait. Training programmes and AI transformation consulting for individuals and organisations.",
-    personName: "Eng. Omar Al-Dhaidi",
+    personName: "Eng. Omar Al-Thaidi",
     jobTitle: "AI Digital Transformation Consultant",
   },
   nav: {
@@ -34,7 +34,7 @@ export const en: SiteContent = {
   },
   hero: {
     prefix: "Eng.",
-    name: "Omar Al-Dhaidi",
+    name: "Omar Al-Thaidi",
     role: "AI Digital Transformation Consultant",
     lead: [
       "I help organisations and professionals move from ",
@@ -69,9 +69,9 @@ export const en: SiteContent = {
       "Today I train employees, teachers and leadership teams, and I am developing a framework for moving organisations from scattered individual use to an integrated institutional system.",
     ],
     card: {
-      name: "Eng. Omar Al-Dhaidi",
+      name: "Eng. Omar Al-Thaidi",
       role: "Generative AI consultant and trainer",
-      photoAlt: "Portrait of Eng. Omar Al-Dhaidi",
+      photoAlt: "Portrait of Eng. Omar Al-Thaidi",
       rows: [
         { label: "Education", value: "MS Electrical Engineering · ASU" },
         { label: "Trainer accreditation", value: "PAAET · Civil Service Commission" },

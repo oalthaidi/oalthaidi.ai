@@ -22,7 +22,7 @@ export const site = {
   whatsappNumber: "96599982354",
   // TODO(content): replace with an address on the custom domain once email is set up.
   email: "oakalthaidi@gmail.com",
-  portrait: { src: "/images/omar-aldhaidi.jpg", width: 672, height: 672 },
+  portrait: { src: "/images/omar-althaidi.jpg", width: 672, height: 672 },
 } as const;
 
 export function whatsappLink(message?: string): string {
