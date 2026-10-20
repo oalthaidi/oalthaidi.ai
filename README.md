@@ -1,6 +1,6 @@
-# Omar Al-Dhaidi Platform
+# Omar Al-Thaidi Platform
 
-Bilingual (Arabic / English) personal platform for **Eng. Omar Al-Dhaidi**, AI digital transformation consultant and accredited trainer in Kuwait.
+Bilingual (Arabic / English) personal platform for **Eng. Omar Al-Thaidi**, AI digital transformation consultant and accredited trainer in Kuwait.
 
 > **بالعربية:** هذا مستودع موقع م. عمر الذايدي. لتعديل النصوص والدورات والمواعيد اقرأ [دليل المحتوى](docs/content-guide.md). بقية الوثائق موجهة للمطوّرين.
 
@@ -76,4 +76,4 @@ npm run check      # type-check + tests
 
 Phase 1 front end. Not yet connected: domain, analytics, CMS, database. See [CHANGELOG.md](CHANGELOG.md) and the roadmap in [docs/architecture.md](docs/architecture.md#roadmap).
 
-© Omar Al-Dhaidi. All rights reserved.
+© Omar Al-Thaidi. All rights reserved.
