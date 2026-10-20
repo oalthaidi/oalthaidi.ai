@@ -1,0 +1,84 @@
+/* Research timeline: a rail that fills with the signal colour on scroll. */
+
+.timeline {
+  position: relative;
+  padding-inline-start: 40px;
+}
+.timeline__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.timeline::before,
+.timeline__fill {
+  content: "";
+  position: absolute;
+  inset-inline-start: 11px;
+  top: 6px;
+  width: 1px;
+}
+.timeline::before {
+  bottom: 6px;
+  background: var(--c-line-2);
+}
+.timeline__fill {
+  height: calc(100% - 12px);
+  background: var(--c-signal);
+  box-shadow: 0 0 10px var(--c-signal);
+  transform-origin: top;
+  transform: scaleY(0);
+}
+.event {
+  position: relative;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 24px;
+  padding-block: 22px;
+  border-bottom: 1px solid var(--c-line);
+}
+.event::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: -34px;
+  top: 31px;
+  width: 9px;
+  height: 9px;
+  transform: rotate(45deg);
+  background: var(--c-ink);
+  border: 1px solid var(--c-fg);
+}
+.event.is-lit::before {
+  background: var(--c-signal);
+  border-color: var(--c-signal);
+  box-shadow: 0 0 12px var(--c-signal);
+}
+.event__year {
+  font-family: var(--f-mono);
+  font-size: 22px;
+  font-variant-numeric: tabular-nums;
+}
+.event__title {
+  font-size: 19px;
+  font-weight: 500;
+}
+.event__body {
+  color: var(--c-mute);
+  font-size: 15px;
+  margin-top: 4px;
+  max-width: 64ch;
+}
+.event__badge {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--c-signal);
+  border: 1px solid rgba(59, 130, 255, 0.4);
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+@media (max-width: 640px) {
+  .event {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}

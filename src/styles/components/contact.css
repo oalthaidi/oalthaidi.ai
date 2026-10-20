@@ -1,0 +1,100 @@
+/* Contact: copyable details and the WhatsApp request form. */
+
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.contact__title {
+  font-size: clamp(34px, 5vw, 60px);
+  margin-block: 14px 28px;
+}
+.contact-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 0;
+  padding-block: 18px;
+  border-bottom: 1px solid var(--c-line);
+}
+.contact-line__value {
+  font-family: var(--f-mono);
+  font-size: clamp(15px, 2vw, 19px);
+  direction: ltr;
+  user-select: all;
+  overflow-wrap: anywhere;
+}
+.copy-btn {
+  flex: none;
+  font: 500 12px var(--f-body);
+  color: var(--c-mute);
+  background: none;
+  border: 1px solid var(--c-line-2);
+  border-radius: 999px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.copy-btn:hover {
+  color: var(--c-fg);
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 26px;
+  border: 1px solid var(--c-line-2);
+  border-radius: var(--radius-lg);
+  background: var(--c-panel);
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.field__label {
+  font-size: 13px;
+  color: var(--c-mute);
+}
+.field__control {
+  width: 100%;
+  padding: 12px 14px;
+  font: 400 15px var(--f-body);
+  color: var(--c-fg);
+  background: var(--c-ink);
+  border: 1px solid var(--c-line-2);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.2s;
+}
+.field__control:focus {
+  outline: none;
+  border-color: var(--c-signal);
+}
+.field__control[aria-invalid="true"] {
+  border-color: var(--c-danger);
+}
+textarea.field__control {
+  min-height: 96px;
+  resize: vertical;
+}
+.field__error {
+  font-size: 13px;
+  color: var(--c-danger);
+}
+.form__note {
+  font-size: 12px;
+  color: var(--c-dim);
+}
+.form__status {
+  font-size: 14px;
+  padding: 12px 14px;
+  border: 1px solid var(--c-signal);
+  border-radius: var(--radius-sm);
+  background: var(--c-signal-soft);
+}
+@media (max-width: 860px) {
+  .contact {
+    grid-template-columns: 1fr;
+  }
+}

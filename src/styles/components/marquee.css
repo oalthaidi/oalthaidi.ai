@@ -1,0 +1,75 @@
+/* Credentials strip: an endless horizontal loop that pauses on hover. */
+
+.marquee {
+  position: relative;
+  overflow: hidden;
+  padding-block: 18px;
+  border-block: 1px solid var(--c-line);
+  background: rgba(18, 18, 20, 0.55);
+}
+.marquee::before,
+.marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 90px;
+  z-index: 1;
+  pointer-events: none;
+}
+.marquee::before {
+  left: 0;
+  background: linear-gradient(to right, var(--c-ink), transparent);
+}
+.marquee::after {
+  right: 0;
+  background: linear-gradient(to left, var(--c-ink), transparent);
+}
+.marquee__track {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: max-content;
+  animation: marquee-ltr 38s linear infinite;
+}
+[dir="rtl"] .marquee__track {
+  animation-name: marquee-rtl;
+}
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+.marquee__item {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  padding-inline-end: 56px;
+  white-space: nowrap;
+  font-family: var(--f-display);
+  font-weight: 300;
+  font-size: 19px;
+  color: var(--c-fg-soft);
+}
+.marquee__item::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  transform: rotate(45deg);
+  border: 1px solid var(--c-signal);
+}
+@keyframes marquee-ltr {
+  to { transform: translateX(-50%); }
+}
+@keyframes marquee-rtl {
+  to { transform: translateX(50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track {
+    animation: none;
+    flex-wrap: wrap;
+    width: auto;
+  }
+  .marquee__item[aria-hidden="true"] {
+    display: none;
+  }
+}

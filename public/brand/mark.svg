@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-250 -250 500 500" role="img" aria-label="Omar Al-Dhaidi mark">
+  <g transform="rotate(45) translate(-174 -174)" fill="none" stroke="currentColor" stroke-width="38" stroke-linejoin="miter" stroke-linecap="butt">
+    <path d="M85 147H19V19H147V90"/>
+    <path d="M187 19H329V166"/>
+    <path d="M263 201H329V329H201V258"/>
+    <path d="M161 329H19V182"/>
+  </g>
+  <circle r="65" fill="currentColor"/>
+</svg>

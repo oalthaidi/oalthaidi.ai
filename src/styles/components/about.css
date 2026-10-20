@@ -1,0 +1,122 @@
+/* About: identity card, story and the four headline numbers. */
+
+.about {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 56px;
+  align-items: start;
+}
+.id-card {
+  position: relative;
+  overflow: hidden;
+  padding: 28px;
+  border: 1px solid var(--c-line-2);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, var(--c-panel-2), var(--c-panel));
+}
+.id-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(var(--c-line-2) 1px, transparent 1px);
+  background-size: 14px 14px;
+  mask-image: linear-gradient(to bottom left, #000, transparent 60%);
+  -webkit-mask-image: linear-gradient(to bottom left, #000, transparent 60%);
+}
+.id-card__top {
+  position: relative;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.id-card__photo {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--c-line-2);
+}
+.id-card__name {
+  font-size: 22px;
+}
+.id-card__role {
+  color: var(--c-mute);
+  font-size: 14px;
+}
+.id-card__rows {
+  position: relative;
+  margin: 24px 0 0;
+}
+.id-card__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 12px;
+  border-top: 1px solid var(--c-line);
+  font-size: 14px;
+}
+.id-card__row dt {
+  color: var(--c-mute);
+}
+.id-card__row dd {
+  margin: 0;
+  font-weight: 500;
+  text-align: end;
+}
+.about__text {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  min-width: 0;
+}
+.about__text p {
+  color: var(--c-fg-soft);
+  font-size: 18px;
+  max-width: 58ch;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  margin-top: 12px;
+  overflow: hidden;
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-md);
+  background: var(--c-line);
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 22px 18px;
+  background: var(--c-ink);
+}
+.section--alt .stat {
+  background: var(--c-band);
+}
+.stat__value {
+  font-family: var(--f-mono);
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.stat__plus {
+  color: var(--c-signal);
+  font-size: 20px;
+  vertical-align: super;
+}
+.stat__label {
+  color: var(--c-mute);
+  font-size: 13px;
+  line-height: 1.5;
+}
+@media (max-width: 860px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
