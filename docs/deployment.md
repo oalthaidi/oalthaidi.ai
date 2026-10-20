@@ -10,7 +10,7 @@ The site deploys to **Vercel** from GitHub. Every push to `main` goes to product
 
    | Name | Value |
    | --- | --- |
-   | `NEXT_PUBLIC_SITE_URL` | `https://<your-domain>` (use the `*.vercel.app` URL until the domain exists) |
+   | `NEXT_PUBLIC_SITE_URL` | `https://<your-domain>`. Optional until the domain exists: without it the site uses Vercel's production URL automatically. |
 
 4. Deploy. The first build is the first full `next build` of this project; check the build log.
 5. Plan: Vercel's free Hobby plan is for non-commercial use only. Switch to **Pro** before the site is used commercially.

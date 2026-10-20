@@ -4,6 +4,9 @@ All notable changes to this project. Format based on [Keep a Changelog](https://
 
 ## [Unreleased]
 
+### Fixed
+- Canonical links, sitemap and social-card URLs pointed to `localhost:3000` on Vercel. The site URL now falls back to Vercel's production URL when `NEXT_PUBLIC_SITE_URL` is not set.
+
 ### To do before launch
 - Review every `REVIEW` comment in `src/content/ar.ts` and `src/content/en.ts`.
 - Confirm session start times (currently 18:00 Kuwait as a placeholder).
