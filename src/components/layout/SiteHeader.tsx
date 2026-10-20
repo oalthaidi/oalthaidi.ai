@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Mark } from "@/components/brand/Mark";
 import type { Locale } from "@/i18n/config";
+import { homeAnchor, localePath, splitPathname, switchLocalePath } from "@/i18n/paths";
 import type { SiteContent } from "@/content/types";
 
 /** Home-page sections linked from the header, in page order. */
@@ -23,8 +24,10 @@ interface SiteHeaderProps {
  */
 export function SiteHeader({ locale, nav, brandName }: SiteHeaderProps) {
   const pathname = usePathname();
-  const isHome = pathname === `/${locale}` || pathname === `/${locale}/`;
-  const home = `/${locale}`;
+  // splitPathname accepts both "/programs/x" (browser) and "/ar/programs/x" (internal), so
+  // server and client renders agree across the middleware rewrite.
+  const isHome = splitPathname(pathname).path === "";
+  const home = localePath(locale);
   const [active, setActive] = useState<string | null>(null);
   const [demo, setDemo] = useState(false);
   const progressRef = useRef<HTMLSpanElement>(null);
@@ -60,7 +63,7 @@ export function SiteHeader({ locale, nav, brandName }: SiteHeaderProps) {
   }, [isHome]);
 
   const otherLocale: Locale = locale === "ar" ? "en" : "ar";
-  const switchHref = pathname.replace(new RegExp(`^/${locale}(?=/|$)`), `/${otherLocale}`) || `/${otherLocale}`;
+  const switchHref = switchLocalePath(pathname, otherLocale);
   const labels: Record<(typeof SECTION_IDS)[number], string> = {
     about: nav.about,
     programs: nav.programs,
@@ -84,7 +87,7 @@ export function SiteHeader({ locale, nav, brandName }: SiteHeaderProps) {
             {SECTION_IDS.map((id) => (
               <a
                 key={id}
-                href={isHome ? `#${id}` : `${home}#${id}`}
+                href={isHome ? `#${id}` : homeAnchor(locale, id)}
                 className={`site-nav__link${active === id ? " is-active" : ""}`}
                 aria-current={active === id ? "true" : undefined}
               >
@@ -106,7 +109,7 @@ export function SiteHeader({ locale, nav, brandName }: SiteHeaderProps) {
                 {nav.tour}
               </button>
             ) : null}
-            <a className="btn btn--sm btn--primary site-header__book" href={isHome ? "#contact" : `${home}#contact`} data-magnetic="">
+            <a className="btn btn--sm btn--primary site-header__book" href={isHome ? "#contact" : homeAnchor(locale, "contact")} data-magnetic="">
               {nav.book}
             </a>
           </div>

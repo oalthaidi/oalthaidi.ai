@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { site } from "@/config/site";
 import { courseSlugs, getContent, getCourse } from "@/content";
 import { isLocale } from "@/i18n/config";
+import { alternateLanguages, homeAnchor, localePath } from "@/i18n/paths";
 import { formatDate } from "@/lib/format";
 import { socialMetadata } from "@/lib/seo";
 
@@ -21,13 +22,13 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const course = getCourse(locale, slug);
   if (!course) return {};
   const { meta } = getContent(locale);
-  const path = `/${locale}/programs/${slug}`;
+  const path = localePath(locale, `/programs/${slug}`);
   return {
     title: course.title,
     description: course.summary,
     alternates: {
       canonical: path,
-      languages: { ar: `/ar/programs/${slug}`, en: `/en/programs/${slug}` },
+      languages: alternateLanguages(`/programs/${slug}`),
     },
     ...socialMetadata({
       locale,
@@ -57,7 +58,7 @@ export default async function CoursePage({ params }: { params: Params }) {
           name: course.title,
           description: course.summary,
           inLanguage: locale,
-          provider: { "@type": "Person", name: meta.personName, url: `${site.url}/${locale}` },
+          provider: { "@type": "Person", name: meta.personName, url: `${site.url}${localePath(locale)}` },
           ...(upcoming.length
             ? {
                 hasCourseInstance: upcoming.map((session) => ({
@@ -71,7 +72,7 @@ export default async function CoursePage({ params }: { params: Params }) {
         }}
       />
       <div className="wrap">
-        <Link className="breadcrumb" href={`/${locale}#programs`}>
+        <Link className="breadcrumb" href={homeAnchor(locale, "programs")}>
           {programs.page.back}
         </Link>
         <div className="course-card__top" style={{ maxWidth: 720 }}>
@@ -137,7 +138,7 @@ export default async function CoursePage({ params }: { params: Params }) {
                 <strong>{programs.page.ctaTitle}</strong>
                 <p className="muted">{programs.page.ctaBody}</p>
               </div>
-              <Link className="btn btn--sm" href={`/${locale}#contact`}>
+              <Link className="btn btn--sm" href={homeAnchor(locale, "contact")}>
                 {programs.requestCta}
               </Link>
             </div>

@@ -10,7 +10,7 @@ Requires Node.js 20.9 or newer (`.nvmrc` pins 22).
 
 ```bash
 npm install
-npm run dev        # http://localhost:3000 → redirects to /ar or /en
+npm run dev        # http://localhost:3000 (Arabic), /en (English)
 npm run check      # type-check + tests
 ```
 
@@ -25,9 +25,9 @@ npm run check      # type-check + tests
 
 ## What is in the site
 
-- **Home** (`/ar`, `/en`): hero with the assembling mark and neural field, credentials strip, about and headline numbers, four programmes, AI readiness check, research timeline, enterprise roadmap, contact form.
-- **Programme pages** (`/[locale]/programs/[slug]`): topics, outcomes, format, upcoming dates with registration links.
-- **Privacy policy** (`/[locale]/privacy`).
+- **Home** (`/` Arabic, `/en` English): hero with the assembling mark and neural field, credentials strip, about and headline numbers, four programmes, AI readiness check, research timeline, enterprise roadmap, contact form.
+- **Programme pages** (`/programs/[slug]`, `/en/programs/[slug]`): topics, outcomes, format, upcoming dates with registration links.
+- **Privacy policy** (`/privacy`, `/en/privacy`).
 - **Investor demo mode**: open any home page with `#tour` to show the guided tour.
 
 ## Project structure
@@ -38,7 +38,7 @@ npm run check      # type-check + tests
 ├── public/                   Static files served as-is (portrait, brand mark)
 ├── src/
 │   ├── app/                  Routes (Next.js App Router)
-│   │   ├── [locale]/         Every page lives under /ar or /en
+│   │   ├── [locale]/         Every page (Arabic is served at the root, see src/i18n/paths.ts)
 │   │   ├── icon.svg          Favicon
 │   │   ├── robots.ts         robots.txt
 │   │   └── sitemap.ts        sitemap.xml with hreflang alternates
@@ -51,10 +51,10 @@ npm run check      # type-check + tests
 │   │   └── ui/               Small shared pieces (section heading, icons, copy button)
 │   ├── config/site.ts        Contact details and site URL
 │   ├── content/              ALL visible text: ar.ts, en.ts, types.ts
-│   ├── i18n/config.ts        Supported locales and language detection
+│   ├── i18n/                 Locales (config.ts) and the URL scheme (paths.ts)
 │   ├── lib/                  Pure logic with tests (scoring, dates, formatting)
 │   ├── styles/               tokens.css → base.css → components/*.css
-│   └── middleware.ts         Redirects / to the visitor's language
+│   └── middleware.ts         Serves Arabic at the root, redirects old /ar links
 └── tests/                    node:test suites, run with tsx
 ```
 

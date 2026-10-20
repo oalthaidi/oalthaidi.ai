@@ -40,6 +40,7 @@ Vercel → Project → Deployments → pick the last good deployment → **Promo
 
 ## After each production deploy
 
-- Open `/ar` and `/en` on a phone.
-- Open `/ar/programs/double-your-efficiency` and check the dates.
+- Open `/` (Arabic) and `/en` on a phone.
+- Open `/programs/double-your-efficiency` and check the dates.
+- Open an old link such as `/ar/privacy` and confirm it lands on `/privacy`.
 - Check `/sitemap.xml` uses the real domain.

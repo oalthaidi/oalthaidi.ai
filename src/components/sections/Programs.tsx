@@ -2,6 +2,7 @@ import Link from "next/link";
 import { CourseIcon } from "@/components/ui/CourseIcon";
 import { SectionHead } from "@/components/ui/SectionHead";
 import type { Locale } from "@/i18n/config";
+import { localePath } from "@/i18n/paths";
 import type { Course, SiteContent } from "@/content/types";
 import { formatDate } from "@/lib/format";
 
@@ -21,7 +22,7 @@ export function Programs({ locale, programs }: { locale: Locale; programs: SiteC
 }
 
 function CourseCard({ course, locale, programs }: { course: Course; locale: Locale; programs: SiteContent["programs"] }) {
-  const href = `/${locale}/programs/${course.slug}`;
+  const href = localePath(locale, `/programs/${course.slug}`);
   const upcoming = course.sessions.filter((session) => new Date(session.startsAt) > new Date());
   const firstRegister = upcoming[0]?.registerUrl;
 

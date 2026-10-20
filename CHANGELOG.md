@@ -5,6 +5,7 @@ All notable changes to this project. Format based on [Keep a Changelog](https://
 ## [Unreleased]
 
 ### Changed
+- Arabic is now the root of the site (`oalthaidi.com`, `/programs/…`); English stays under `/en`. Old `/ar` links redirect permanently. Browser-language redirect removed; visitors switch with the EN link ([ADR 0008](docs/decisions/0008-arabic-at-root.md)).
 - Production domain set to `oalthaidi.com`; deployment guide updated for GoDaddy DNS.
 - English surname corrected to **Al-Thaidi** across the site, metadata and docs; portrait file renamed to `omar-althaidi.jpg`.
 

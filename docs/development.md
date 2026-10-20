@@ -22,6 +22,7 @@ Add a line to `CHANGELOG.md` under **Unreleased** for any change a visitor or Om
 
 - **TypeScript strict.** No `any` in source files.
 - **Server components by default.** Add `"use client"` only when a component needs state, effects or browser APIs, and pass it plain data.
+- **Links:** build internal URLs with `localePath()` / `homeAnchor()` from `src/i18n/paths.ts`.
 - **Text never lives in components.** Every visible string comes from `src/content/` through props.
 - **Logic lives in `src/lib/` as pure functions** with a test in `tests/`.
 - **Styles:** tokens only, logical properties, BEM-style class names (see [design-system.md](design-system.md)).
@@ -52,7 +53,9 @@ Add the code to `locales` in `src/i18n/config.ts`, create `src/content/<code>.ts
 | File | Covers |
 | --- | --- |
 | `readiness.test.ts` | Score and level boundaries |
-| `i18n.test.ts` | Locale validation, direction, Accept-Language parsing |
+| `i18n.test.ts` | Locale validation and text direction |
+| `paths.test.ts` | URL scheme: Arabic at the root, `/en`, old `/ar` redirects, language switch |
+| `seo.test.ts` | Social preview metadata |
 | `sessions.test.ts` | Next upcoming session, countdown maths |
 | `format-and-leads.test.ts` | Arabic digits, Kuwait time zone, WhatsApp message |
 | `content.test.ts` | Arabic/English parity and content integrity |

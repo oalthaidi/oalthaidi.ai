@@ -3,15 +3,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { notFoundText } from "@/content/not-found";
-import { defaultLocale, isLocale } from "@/i18n/config";
+import { localePath, splitPathname } from "@/i18n/paths";
 
 /**
  * 404 page. not-found files receive no params, so the locale is read from
  * the URL on the client.
  */
 export default function NotFound() {
-  const segment = usePathname()?.split("/")[1];
-  const locale = isLocale(segment) ? segment : defaultLocale;
+  const { locale } = splitPathname(usePathname() ?? "/");
   const notFound = notFoundText[locale];
 
   return (
@@ -20,7 +19,7 @@ export default function NotFound() {
       <h1 className="page__title">{notFound.title}</h1>
       <p className="page__lead">{notFound.body}</p>
       <div>
-        <Link className="btn btn--primary" href={`/${locale}`}>
+        <Link className="btn btn--primary" href={localePath(locale)}>
           {notFound.home}
         </Link>
       </div>

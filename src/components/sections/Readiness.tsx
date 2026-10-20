@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import type { Locale } from "@/i18n/config";
+import { localePath } from "@/i18n/paths";
 import type { SiteContent } from "@/content/types";
 import { formatNumber, formatPercent } from "@/lib/format";
 import { prefersReducedMotion } from "@/lib/motion";
@@ -25,7 +26,7 @@ export function Readiness({ locale, readiness }: ReadinessProps) {
   const score = readinessScore(answers);
   const level = readiness.levels[readinessLevel(score)];
   const shownScore = useAnimatedNumber(score);
-  const recommendationHref = level.courseSlug ? `/${locale}/programs/${level.courseSlug}` : "#contact";
+  const recommendationHref = level.courseSlug ? localePath(locale, `/programs/${level.courseSlug}`) : "#contact";
 
   const choose = (question: number, option: number) =>
     setAnswers((current) => current.map((value, index) => (index === question ? option : value)));
