@@ -8,6 +8,7 @@ import { Enhancements } from "@/components/motion/Enhancements";
 import { site } from "@/config/site";
 import { getContent } from "@/content";
 import { directionOf, isLocale, locales } from "@/i18n/config";
+import { socialMetadata } from "@/lib/seo";
 
 // Styles: tokens first, then base, then components (order matters for the cascade).
 import "@/styles/tokens.css";
@@ -57,15 +58,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       canonical: `/${locale}`,
       languages: { ar: "/ar", en: "/en", "x-default": "/ar" },
     },
-    openGraph: {
-      type: "website",
-      locale: locale === "ar" ? "ar_KW" : "en_GB",
+    ...socialMetadata({
+      locale,
       siteName: meta.personName,
       title: meta.title,
       description: meta.description,
-      images: [{ url: site.portrait.src, width: site.portrait.width, height: site.portrait.height, alt: meta.personName }],
-    },
-    twitter: { card: "summary", title: meta.title, description: meta.description },
+      path: `/${locale}`,
+    }),
   };
 }
 

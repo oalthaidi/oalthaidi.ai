@@ -7,6 +7,7 @@ import { site } from "@/config/site";
 import { courseSlugs, getContent, getCourse } from "@/content";
 import { isLocale } from "@/i18n/config";
 import { formatDate } from "@/lib/format";
+import { socialMetadata } from "@/lib/seo";
 
 type Params = Promise<{ locale: string; slug: string }>;
 
@@ -19,13 +20,22 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   if (!isLocale(locale)) return {};
   const course = getCourse(locale, slug);
   if (!course) return {};
+  const { meta } = getContent(locale);
+  const path = `/${locale}/programs/${slug}`;
   return {
     title: course.title,
     description: course.summary,
     alternates: {
-      canonical: `/${locale}/programs/${slug}`,
+      canonical: path,
       languages: { ar: `/ar/programs/${slug}`, en: `/en/programs/${slug}` },
     },
+    ...socialMetadata({
+      locale,
+      siteName: meta.personName,
+      title: `${course.title} | ${meta.personName}`,
+      description: course.summary,
+      path,
+    }),
   };
 }
 
