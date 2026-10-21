@@ -7,7 +7,7 @@ import { site } from "@/config/site";
 import { courseSlugs, getContent, getCourse } from "@/content";
 import { isLocale } from "@/i18n/config";
 import { alternateLanguages, homeAnchor, localePath } from "@/i18n/paths";
-import { formatDate } from "@/lib/format";
+import { formatDate, formatTimeRange } from "@/lib/format";
 import { socialMetadata } from "@/lib/seo";
 
 type Params = Promise<{ locale: string; slug: string }>;
@@ -64,6 +64,7 @@ export default async function CoursePage({ params }: { params: Params }) {
                 hasCourseInstance: upcoming.map((session) => ({
                   "@type": "CourseInstance",
                   startDate: session.startsAt,
+                  endDate: session.endsAt,
                   courseMode: session.mode,
                   url: session.registerUrl,
                 })),
@@ -122,7 +123,9 @@ export default async function CoursePage({ params }: { params: Params }) {
                       <time className="session__date" dateTime={session.startsAt}>
                         {formatDate(session.startsAt, locale)}
                       </time>
-                      <div className="session__mode">{session.mode}</div>
+                      <div className="session__mode">
+                        {formatTimeRange(session.startsAt, session.endsAt, locale)} · {session.mode}
+                      </div>
                     </div>
                     <a className="btn btn--sm btn--primary" href={session.registerUrl} target="_blank" rel="noopener noreferrer">
                       {programs.registerCta} ↗

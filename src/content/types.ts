@@ -11,14 +11,16 @@ export type Rich = ReadonlyArray<string | { em: string }>;
 export type CourseSlug =
   | "distinguished-employee"
   | "ai-digital-transformation"
-  | "creative-teacher"
+  | "successful-teacher"
   | "double-your-efficiency";
 
 export type CourseIcon = "employee" | "enterprise" | "teacher" | "individual";
 
 export interface Session {
-  /** ISO date-time with offset, e.g. "2026-10-26T18:00:00+03:00". */
+  /** ISO date-time with offset, e.g. "2026-10-26T17:00:00+03:00". */
   startsAt: string;
+  /** ISO date-time with offset; must be on the same day, after startsAt. */
+  endsAt: string;
   mode: string;
   registerUrl: string;
 }
