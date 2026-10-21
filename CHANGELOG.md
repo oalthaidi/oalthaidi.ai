@@ -5,6 +5,9 @@ All notable changes to this project. Format based on [Keep a Changelog](https://
 ## [Unreleased]
 
 ### Changed
+- Programme names aligned with Global Training: «المعلم الناجح في زمن الذكاء الاصطناعي» and «ضاعف كفاءتك في عصر الذكاء الاصطناعي». The teacher programme slug is now `successful-teacher`; old `creative-teacher` links redirect permanently.
+- Session times corrected to 5:00–8:30 pm Kuwait time (from the institute's pages), shown on programme pages; format mentions the one-day online cohort and Global Training attendance certificate.
+- Registration call to action renamed to «احجز مقعد» / “Book a seat”. Fees are intentionally not shown.
 - Arabic is now the root of the site (`oalthaidi.com`, `/programs/…`); English stays under `/en`. Old `/ar` links redirect permanently. Browser-language redirect removed; visitors switch with the EN link ([ADR 0008](docs/decisions/0008-arabic-at-root.md)).
 - Production domain set to `oalthaidi.com`; deployment guide updated for GoDaddy DNS.
 - English surname corrected to **Al-Thaidi** across the site, metadata and docs; portrait file renamed to `omar-althaidi.jpg`.
@@ -15,7 +18,6 @@ All notable changes to this project. Format based on [Keep a Changelog](https://
 
 ### To do before launch
 - Review every `REVIEW` comment in `src/content/ar.ts` and `src/content/en.ts`.
-- Confirm session start times (currently 18:00 Kuwait as a placeholder).
 - Lawyer review of the privacy policy.
 
 ## [0.1.0] — 2026-10-20

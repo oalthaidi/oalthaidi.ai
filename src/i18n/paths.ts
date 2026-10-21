@@ -2,7 +2,7 @@
  * URL scheme: Arabic lives at the root, English under /en.
  *
  *   /                          Arabic home
- *   /programs/creative-teacher Arabic programme page
+ *   /programs/successful-teacher Arabic programme page
  *   /en                        English home
  *   /en/programs/…             English programme page
  *

@@ -21,8 +21,8 @@ test("both languages list the same programmes in the same order", () => {
     const other = en.programs.courses[i];
     assert.equal(other.icon, course.icon, `${course.slug} icon`);
     assert.deepEqual(
-      other.sessions.map((s) => [s.startsAt, s.registerUrl]),
-      course.sessions.map((s) => [s.startsAt, s.registerUrl]),
+      other.sessions.map((s) => [s.startsAt, s.endsAt, s.registerUrl]),
+      course.sessions.map((s) => [s.startsAt, s.endsAt, s.registerUrl]),
       `${course.slug} sessions`,
     );
   });
@@ -57,6 +57,9 @@ test("sessions have valid Kuwait-time dates and https registration links", () =>
       assert.match(session.startsAt, /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\+03:00$/, session.startsAt);
       assert.ok(!Number.isNaN(Date.parse(session.startsAt)), session.startsAt);
       assert.match(session.registerUrl, /^https:\/\//, session.registerUrl);
+      assert.match(session.endsAt, /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\+03:00$/, session.endsAt);
+      assert.equal(session.endsAt.slice(0, 10), session.startsAt.slice(0, 10), "session ends on the same day");
+      assert.ok(Date.parse(session.endsAt) > Date.parse(session.startsAt), "session ends after it starts");
     }
   }
 });

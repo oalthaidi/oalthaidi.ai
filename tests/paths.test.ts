@@ -4,7 +4,7 @@ import { alternateLanguages, homeAnchor, localePath, routeRequest, splitPathname
 
 test("Arabic paths have no prefix, English paths start with /en", () => {
   assert.equal(localePath("ar"), "/");
-  assert.equal(localePath("ar", "/programs/creative-teacher"), "/programs/creative-teacher");
+  assert.equal(localePath("ar", "/programs/successful-teacher"), "/programs/successful-teacher");
   assert.equal(localePath("en"), "/en");
   assert.equal(localePath("en", "/privacy"), "/en/privacy");
   assert.equal(localePath("en", "/"), "/en");
