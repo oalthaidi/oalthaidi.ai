@@ -4,6 +4,9 @@ All notable changes to this project. Format based on [Keep a Changelog](https://
 
 ## [Unreleased]
 
+### Changed (phones)
+- Larger header on phones (≤860 px): mark 40 px, social icons 38 px with 18 px glyphs, language switch 15 px. The written name is hidden there so the top row stays on one line; the booking button hides below 600 px. Icons step down to 32 px below 350 px.
+
 ### Added
 - Social icons (WhatsApp, email, Instagram, TikTok, YouTube) in the header and footer: white on black, inverted on hover. Icons from `react-icons` (Font Awesome 6); profiles in `src/config/site.ts`.
 
