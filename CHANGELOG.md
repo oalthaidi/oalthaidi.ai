@@ -4,6 +4,9 @@ All notable changes to this project. Format based on [Keep a Changelog](https://
 
 ## [Unreleased]
 
+### Added
+- Social icons (WhatsApp, email, Instagram, TikTok, YouTube) in the header and footer: white on black, inverted on hover. Icons from `react-icons` (Font Awesome 6); profiles in `src/config/site.ts`.
+
 ### Changed
 - Programme names aligned with Global Training: «المعلم الناجح في زمن الذكاء الاصطناعي» and «ضاعف كفاءتك في عصر الذكاء الاصطناعي». The teacher programme slug is now `successful-teacher`; old `creative-teacher` links redirect permanently.
 - Session times corrected to 5:00–8:30 pm Kuwait time (from the institute's pages), shown on programme pages; format mentions the one-day online cohort and Global Training attendance certificate.

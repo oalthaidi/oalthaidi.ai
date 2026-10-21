@@ -179,6 +179,8 @@ export interface SiteContent {
     };
   };
   footer: { tagline: string; privacy: string; rights: string };
+  /** Accessible names for the social icons (header and footer). */
+  social: { label: string; whatsapp: string; email: string; instagram: string; tiktok: string; youtube: string };
   privacy: { title: string; updated: string; sections: ReadonlyArray<{ heading: string; body: string }> };
   tour: { steps: readonly TourStep[]; prev: string; next: string; finish: string; close: string; of: string };
   notFound: { title: string; body: string; home: string };
