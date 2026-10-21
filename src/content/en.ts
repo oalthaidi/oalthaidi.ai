@@ -320,6 +320,7 @@ export const en: SiteContent = {
     },
   },
   footer: { tagline: "AI and digital transformation · Solutions and systems", privacy: "Privacy policy", rights: "All rights reserved" },
+  social: { label: "Follow and contact", whatsapp: "WhatsApp", email: "Email", instagram: "Instagram", tiktok: "TikTok", youtube: "YouTube" },
   privacy: {
     title: "Privacy policy",
     // REVIEW: first draft; needs a lawyer's review before launch.

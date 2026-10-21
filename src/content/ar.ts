@@ -319,6 +319,7 @@ export const ar: SiteContent = {
     },
   },
   footer: { tagline: "ذكاء اصطناعي وتحول رقمي · حلول وأنظمة", privacy: "سياسة الخصوصية", rights: "جميع الحقوق محفوظة" },
+  social: { label: "حساباتي", whatsapp: "واتساب", email: "البريد الإلكتروني", instagram: "إنستغرام", tiktok: "تيك توك", youtube: "يوتيوب" },
   privacy: {
     title: "سياسة الخصوصية",
     // REVIEW: مسودة أولية، تحتاج مراجعة محامٍ قبل الإطلاق.

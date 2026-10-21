@@ -13,3 +13,6 @@ Runtime dependencies are only `next`, `react` and `react-dom`. Locale routing is
 - Fewer upgrades, smaller bundles, no library API churn.
 - We maintain locale detection and motion code ourselves; both are covered by tests or small enough to read in one sitting.
 - Revisit if the site needs pluralisation rules, many locales, or complex timeline animation.
+
+## Update 2026-10-22
+`react-icons` added for the social brand icons, so brand marks come from a maintained icon set instead of hand-drawn SVG. Only the five icons used are bundled (tree-shaken).

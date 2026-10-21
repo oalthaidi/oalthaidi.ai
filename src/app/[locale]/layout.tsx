@@ -85,9 +85,9 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
           {content.nav.skipToContent}
         </a>
         <Enhancements />
-        <SiteHeader locale={locale} nav={content.nav} brandName={content.hero.name} />
+        <SiteHeader locale={locale} nav={content.nav} brandName={content.hero.name} social={content.social} />
         <main id="main">{children}</main>
-        <SiteFooter locale={locale} brandName={content.meta.personName} footer={content.footer} />
+        <SiteFooter locale={locale} brandName={content.meta.personName} footer={content.footer} social={content.social} />
       </body>
     </html>
   );

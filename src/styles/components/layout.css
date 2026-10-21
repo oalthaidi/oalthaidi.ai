@@ -118,7 +118,9 @@
   color: var(--c-fg);
 }
 
-@media (max-width: 860px) {
+/* The header needs a second row for the section links below ~1100px,
+   so the links, icons, language switch and booking button never collide. */
+@media (max-width: 1100px) {
   .site-header__inner {
     flex-wrap: wrap;
     height: auto;
@@ -186,4 +188,62 @@
 }
 .site-footer a:hover {
   color: var(--c-fg);
+}
+
+/* Social icons (header and footer): white on black, inverted on hover. */
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.social-links__link {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--c-line-2);
+  color: var(--c-fg);
+  background: transparent;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.social-links__link svg {
+  width: 15px;
+  height: 15px;
+}
+.social-links__link:hover,
+.social-links__link:focus-visible {
+  background: var(--c-fg);
+  color: var(--c-ink);
+  border-color: var(--c-fg);
+}
+.site-footer .social-links__link {
+  width: 36px;
+  height: 36px;
+}
+@media (max-width: 860px) {
+  .social-links {
+    gap: 4px;
+  }
+  .site-header .social-links__link {
+    width: 30px;
+    height: 30px;
+  }
+}
+@media (max-width: 420px) {
+  /* Keep the header on one line: show the mark without the written name. */
+  .site-header .brand__name {
+    display: none;
+  }
+  .site-header .social-links__link {
+    width: 28px;
+    height: 28px;
+  }
+  .site-header .social-links__link svg {
+    width: 13px;
+    height: 13px;
+  }
 }

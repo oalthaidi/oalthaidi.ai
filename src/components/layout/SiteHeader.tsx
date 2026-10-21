@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Mark } from "@/components/brand/Mark";
+import { SocialLinks } from "@/components/ui/SocialLinks";
 import type { Locale } from "@/i18n/config";
 import { homeAnchor, localePath, splitPathname, switchLocalePath } from "@/i18n/paths";
 import type { SiteContent } from "@/content/types";
@@ -15,6 +16,7 @@ interface SiteHeaderProps {
   locale: Locale;
   nav: SiteContent["nav"];
   brandName: string;
+  social: SiteContent["social"];
 }
 
 /**
@@ -22,7 +24,7 @@ interface SiteHeaderProps {
  * booking button and (in demo mode) the guided-tour button.
  * Also drives the thin scroll-progress bar at the top of the page.
  */
-export function SiteHeader({ locale, nav, brandName }: SiteHeaderProps) {
+export function SiteHeader({ locale, nav, brandName, social }: SiteHeaderProps) {
   const pathname = usePathname();
   // splitPathname accepts both "/programs/x" (browser) and "/ar/programs/x" (internal), so
   // server and client renders agree across the middleware rewrite.
@@ -81,7 +83,7 @@ export function SiteHeader({ locale, nav, brandName }: SiteHeaderProps) {
         <div className="wrap site-header__inner">
           <Link href={home} className="brand">
             <Mark className="brand__mark" />
-            {brandName}
+            <span className="brand__name">{brandName}</span>
           </Link>
           <nav className="site-nav" aria-label={nav.sectionsLabel}>
             {SECTION_IDS.map((id) => (
@@ -96,6 +98,7 @@ export function SiteHeader({ locale, nav, brandName }: SiteHeaderProps) {
             ))}
           </nav>
           <div className="site-header__actions">
+            <SocialLinks labels={social} />
             <Link href={switchHref} className="lang-switch" hrefLang={otherLocale} lang={otherLocale} aria-label={nav.switchLanguageLabel}>
               {nav.switchLanguage}
             </Link>

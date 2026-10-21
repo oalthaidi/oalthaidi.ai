@@ -25,6 +25,17 @@ export const site = {
   portrait: { src: "/images/omar-althaidi.jpg", width: 672, height: 672 },
 } as const;
 
+/** Social profiles, in display order. Change a handle here and both header and footer update. */
+export const socialProfiles = [
+  { id: "whatsapp", href: `https://wa.me/${site.whatsappNumber}` },
+  { id: "email", href: `mailto:${site.email}` },
+  { id: "instagram", href: "https://www.instagram.com/oalthaidi.ai" },
+  { id: "tiktok", href: "https://www.tiktok.com/@oalthaidi.ai" },
+  { id: "youtube", href: "https://www.youtube.com/@oalthaidi" },
+] as const;
+
+export type SocialId = (typeof socialProfiles)[number]["id"];
+
 export function whatsappLink(message?: string): string {
   const base = `https://wa.me/${site.whatsappNumber}`;
   return message ? `${base}?text=${encodeURIComponent(message)}` : base;
