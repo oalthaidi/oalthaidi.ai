@@ -220,32 +220,35 @@
   height: 36px;
 }
 @media (max-width: 860px) {
-  /* Phones: larger mark and icons, easier to read and to tap. */
+  /* Phones: large mark and icons, at Apple's 44 px minimum touch size. */
   .site-header .brand__mark {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
   }
   .site-header .social-links {
-    gap: 6px;
+    gap: 4px;
   }
   .site-header .social-links__link {
-    width: 38px;
-    height: 38px;
+    width: 44px;
+    height: 44px;
   }
   .site-header .social-links__link svg {
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
   }
   .site-header .lang-switch {
-    font-size: 15px;
-    padding-inline: 6px;
+    font-size: 16px;
+    padding-inline: 4px;
   }
   /* Keep the top row on one line: the mark stands alone without the written name. */
   .site-header .brand__name {
     display: none;
   }
   .site-header__inner {
-    column-gap: 12px;
+    column-gap: 10px;
+  }
+  .site-header__actions {
+    gap: 6px;
   }
 }
 @media (max-width: 600px) {
@@ -253,17 +256,31 @@
     display: none;
   }
 }
-@media (max-width: 350px) {
-  /* Very narrow phones (e.g. iPhone SE 1st gen): step the icons down so they still fit. */
-  .site-header .social-links {
-    gap: 4px;
+@media (max-width: 374px) {
+  /* Narrow phones (360 px Android, iPhone SE): one step down so the row still fits. */
+  .site-header .brand__mark {
+    width: 40px;
+    height: 40px;
   }
   .site-header .social-links__link {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
   }
   .site-header .social-links__link svg {
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
+  }
+}
+@media (max-width: 339px) {
+  .site-header .social-links {
+    gap: 2px;
+  }
+  .site-header .social-links__link {
+    width: 36px;
+    height: 36px;
+  }
+  .site-header .social-links__link svg {
+    width: 18px;
+    height: 18px;
   }
 }
