@@ -179,6 +179,13 @@ export const en: SiteContent = {
         ],
         format: "Public cohorts: one day online, with an attendance certificate from Global Training. Also available in person for schools.",
         availability: "Available to schools on request",
+        image: { src: "/images/programs/successful-teacher.jpg", alt: "Eng. Omar Al-Thaidi with the title of The Successful Teacher in the Age of AI" },
+        poster: {
+          src: "/images/programs/successful-teacher-poster.jpg",
+          alt: "Eng. Omar Al-Thaidi with the title of The Successful Teacher in the Age of AI",
+          width: 1080,
+          height: 1934,
+        },
         sessions: [
           { startsAt: "2026-11-30T17:00:00+03:00", endsAt: "2026-11-30T20:30:00+03:00", mode: "Online", registerUrl: `${GT}/the-successful-teacher-with-artificial-intelligence-5` },
         ],

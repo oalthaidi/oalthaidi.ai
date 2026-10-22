@@ -179,6 +179,13 @@ export const ar: SiteContent = {
         ],
         format: "الدفعات العامة: يوم واحد أونلاين مع شهادة حضور من Global Training. ويمكن تنفيذها حضورياً للمدارس.",
         availability: "متاح للمدارس والجهات حسب الطلب",
+        image: { src: "/images/programs/successful-teacher.jpg", alt: "م. عمر الذايدي مع عنوان دورة المعلم الناجح في زمن الذكاء الاصطناعي" },
+        poster: {
+          src: "/images/programs/successful-teacher-poster.jpg",
+          alt: "م. عمر الذايدي مع عنوان دورة المعلم الناجح في زمن الذكاء الاصطناعي",
+          width: 1080,
+          height: 1934,
+        },
         sessions: [
           { startsAt: "2026-11-30T17:00:00+03:00", endsAt: "2026-11-30T20:30:00+03:00", mode: "أونلاين", registerUrl: `${GT}/the-successful-teacher-with-artificial-intelligence-5` },
         ],
