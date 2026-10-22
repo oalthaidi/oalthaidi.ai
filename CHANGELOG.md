@@ -8,6 +8,7 @@ All notable changes to this project. Format based on [Keep a Changelog](https://
 - Phone header (≤860 px) uses Apple's 44 px touch size: mark and social icons 44 px with 22 px glyphs, language switch 16 px. The written name is hidden there and the booking button hides below 600 px. Steps down to 40 px below 375 px and 36 px below 340 px.
 
 ### Added
+- Images for «ضاعف كفاءتك في عصر الذكاء الاصطناعي»: square image on the home card and in share previews, 9:16 poster on its programme page. All four programmes now have images.
 - Images for «المعلم الناجح في زمن الذكاء الاصطناعي»: square image on the home card and in share previews, 9:16 poster on its programme page.
 - Images for «التحول الرقمي بالذكاء الاصطناعي للمؤسسات»: square image on the home card and in share previews, tall 9:16 poster on its programme page. New optional `poster` field; pages with a poster use a non-sticky side panel.
 - Promotional image for «الموظف المميز في زمن الذكاء الاصطناعي»: shown in its card on the home page (above the title), at the top of its programme page (first on phones), and as that page's share preview. Optional `image` field on programmes.

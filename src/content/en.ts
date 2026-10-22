@@ -213,6 +213,13 @@ export const en: SiteContent = {
         ],
         format: "One day online, with an attendance certificate from Global Training.",
         availability: "Regular cohorts",
+        image: { src: "/images/programs/double-your-efficiency.jpg", alt: "Eng. Omar Al-Thaidi with the title of Double Your Efficiency in the Age of AI" },
+        poster: {
+          src: "/images/programs/double-your-efficiency-poster.jpg",
+          alt: "Eng. Omar Al-Thaidi with the title of Double Your Efficiency in the Age of AI",
+          width: 1080,
+          height: 1934,
+        },
         sessions: [
           { startsAt: "2026-10-26T17:00:00+03:00", endsAt: "2026-10-26T20:30:00+03:00", mode: "Online", registerUrl: `${GT}/increase-your-productivity-in-the-age-of-artificial-intelligence-4` },
           { startsAt: "2026-11-09T17:00:00+03:00", endsAt: "2026-11-09T20:30:00+03:00", mode: "Online", registerUrl: `${GT}/increase-your-productivity-in-the-age-of-artificial-intelligence-5` },
