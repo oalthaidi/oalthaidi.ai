@@ -92,6 +92,13 @@
   border: 1px solid var(--c-line);
   object-fit: cover;
 }
+.course-page__cover--poster {
+  aspect-ratio: auto;
+}
+/* A tall poster makes the panel taller than the screen, so it scrolls with the page. */
+.course-page__aside--poster {
+  position: static;
+}
 .session {
   display: flex;
   justify-content: space-between;

@@ -95,6 +95,8 @@ test("programme images exist and match in both languages", () => {
   ar.programs.courses.forEach((course, i) => {
     assert.equal(en.programs.courses[i].image?.src, course.image?.src, `${course.slug} image`);
     if (course.image) assert.ok(existsSync(`public${course.image.src}`), `missing public${course.image.src}`);
+    assert.deepEqual(en.programs.courses[i].poster && { ...en.programs.courses[i].poster, alt: "" }, course.poster && { ...course.poster, alt: "" }, `${course.slug} poster`);
+    if (course.poster) assert.ok(existsSync(`public${course.poster.src}`), `missing public${course.poster.src}`);
   });
 });
 

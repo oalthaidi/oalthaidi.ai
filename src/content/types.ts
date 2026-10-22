@@ -40,6 +40,12 @@ export interface Course {
   sessions: readonly Session[];
   /** Square promotional image (1200×1200 in public/images/programs/); also used as the page's share preview. */
   image?: { src: string; alt: string };
+  /**
+   * Optional tall poster (9:16) for the programme page. When present it
+   * replaces the square image there; the square one stays on the home card
+   * and in share previews.
+   */
+  poster?: { src: string; alt: string; width: number; height: number };
 }
 
 export interface Stat {
