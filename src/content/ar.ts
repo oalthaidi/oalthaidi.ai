@@ -213,6 +213,13 @@ export const ar: SiteContent = {
         ],
         format: "يوم واحد أونلاين، مع شهادة حضور من Global Training.",
         availability: "دفعات دورية",
+        image: { src: "/images/programs/double-your-efficiency.jpg", alt: "م. عمر الذايدي مع عنوان دورة ضاعف كفاءتك في عصر الذكاء الاصطناعي" },
+        poster: {
+          src: "/images/programs/double-your-efficiency-poster.jpg",
+          alt: "م. عمر الذايدي مع عنوان دورة ضاعف كفاءتك في عصر الذكاء الاصطناعي",
+          width: 1080,
+          height: 1934,
+        },
         sessions: [
           { startsAt: "2026-10-26T17:00:00+03:00", endsAt: "2026-10-26T20:30:00+03:00", mode: "أونلاين", registerUrl: `${GT}/increase-your-productivity-in-the-age-of-artificial-intelligence-4` },
           { startsAt: "2026-11-09T17:00:00+03:00", endsAt: "2026-11-09T20:30:00+03:00", mode: "أونلاين", registerUrl: `${GT}/increase-your-productivity-in-the-age-of-artificial-intelligence-5` },
