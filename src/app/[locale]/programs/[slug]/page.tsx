@@ -109,8 +109,21 @@ export default async function CoursePage({ params }: { params: Params }) {
             </section>
           </div>
 
-          <aside className="course-page__aside" aria-labelledby="dates-title">
-            {course.image ? (
+          <aside
+            className={`course-page__aside${course.poster ? " course-page__aside--poster" : ""}`}
+            aria-labelledby="dates-title"
+          >
+            {course.poster ? (
+              <Image
+                className="course-page__cover course-page__cover--poster"
+                src={course.poster.src}
+                alt={course.poster.alt}
+                width={course.poster.width}
+                height={course.poster.height}
+                sizes="(max-width: 860px) 100vw, 420px"
+                priority
+              />
+            ) : course.image ? (
               <Image
                 className="course-page__cover"
                 src={course.image.src}

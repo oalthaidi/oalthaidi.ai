@@ -148,6 +148,13 @@ export const en: SiteContent = {
         format: "Closed workshop for senior management",
         availability: "Closed workshop for organisations",
         sessions: [],
+        image: { src: "/images/programs/ai-digital-transformation.jpg", alt: "Eng. Omar Al-Thaidi with the title of AI Digital Transformation for Organisations" },
+        poster: {
+          src: "/images/programs/ai-digital-transformation-poster.jpg",
+          alt: "Eng. Omar Al-Thaidi with the title of AI Digital Transformation for Organisations",
+          width: 1080,
+          height: 1934,
+        },
       },
       {
         slug: "successful-teacher",

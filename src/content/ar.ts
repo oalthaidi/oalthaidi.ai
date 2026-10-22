@@ -148,6 +148,13 @@ export const ar: SiteContent = {
         format: "ورشة مغلقة للإدارة العليا",
         availability: "ورشة مغلقة للجهات",
         sessions: [],
+        image: { src: "/images/programs/ai-digital-transformation.jpg", alt: "م. عمر الذايدي مع عنوان دورة التحول الرقمي بالذكاء الاصطناعي للمؤسسات" },
+        poster: {
+          src: "/images/programs/ai-digital-transformation-poster.jpg",
+          alt: "م. عمر الذايدي مع عنوان دورة التحول الرقمي بالذكاء الاصطناعي للمؤسسات",
+          width: 1080,
+          height: 1934,
+        },
       },
       {
         slug: "successful-teacher",
