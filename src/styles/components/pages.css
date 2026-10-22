@@ -83,6 +83,15 @@
   border-radius: var(--radius-lg);
   background: var(--c-panel);
 }
+.course-page__cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--c-line);
+  object-fit: cover;
+}
 .session {
   display: flex;
   justify-content: space-between;
@@ -109,6 +118,8 @@
   }
   .course-page__aside {
     position: static;
+    /* On phones the image, dates and booking come before the topics. */
+    order: -1;
   }
 }
 

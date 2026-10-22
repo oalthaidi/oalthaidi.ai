@@ -15,12 +15,14 @@ interface SocialInput {
   siteName: string;
   title: string;
   description: string;
+  /** Page-specific preview image; defaults to the 1200×630 site card. */
+  image?: { url: string; width: number; height: number };
   /** Path after the domain, e.g. "/programs/successful-teacher" or "/en/privacy". */
   path: string;
 }
 
-export function socialMetadata({ locale, siteName, title, description, path }: SocialInput) {
-  const image = { ...SOCIAL_IMAGE, alt: siteName };
+export function socialMetadata({ locale, siteName, title, description, path, image: custom }: SocialInput) {
+  const image = { ...(custom ?? SOCIAL_IMAGE), alt: siteName };
   return {
     openGraph: {
       type: "website" as const,

@@ -121,6 +121,7 @@ export const ar: SiteContent = {
         format: "ورشة حضورية أو عن بُعد للجهات",
         availability: "متاح للجهات حسب الطلب",
         sessions: [],
+        image: { src: "/images/programs/distinguished-employee.jpg", alt: "م. عمر الذايدي مع عنوان دورة الموظف المميز في زمن الذكاء الاصطناعي" },
       },
       {
         slug: "ai-digital-transformation",

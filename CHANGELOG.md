@@ -8,6 +8,7 @@ All notable changes to this project. Format based on [Keep a Changelog](https://
 - Phone header (≤860 px) uses Apple's 44 px touch size: mark and social icons 44 px with 22 px glyphs, language switch 16 px. The written name is hidden there and the booking button hides below 600 px. Steps down to 40 px below 375 px and 36 px below 340 px.
 
 ### Added
+- Promotional image for «الموظف المميز في زمن الذكاء الاصطناعي»: shown at the top of its programme page (first on phones) and used as that page's share preview. Optional `image` field on programmes.
 - Social icons (WhatsApp, email, Instagram, TikTok, YouTube) in the header and footer: white on black, inverted on hover. Icons from `react-icons` (Font Awesome 6); profiles in `src/config/site.ts`.
 
 ### Changed
