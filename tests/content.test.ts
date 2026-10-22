@@ -5,6 +5,7 @@
  * empty text.
  */
 import assert from "node:assert/strict";
+import { existsSync } from "node:fs";
 import { test } from "node:test";
 import { ar } from "../src/content/ar";
 import { en } from "../src/content/en";
@@ -88,6 +89,13 @@ test("message templates use every form field", () => {
       assert.ok(content.contact.form.messageTemplate.includes(key), `${content.locale} ${key}`);
     }
   }
+});
+
+test("programme images exist and match in both languages", () => {
+  ar.programs.courses.forEach((course, i) => {
+    assert.equal(en.programs.courses[i].image?.src, course.image?.src, `${course.slug} image`);
+    if (course.image) assert.ok(existsSync(`public${course.image.src}`), `missing public${course.image.src}`);
+  });
 });
 
 test("no text field is empty", () => {

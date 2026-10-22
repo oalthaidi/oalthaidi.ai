@@ -38,6 +38,8 @@ export interface Course {
   /** Shown when there is no upcoming public session. */
   availability: string;
   sessions: readonly Session[];
+  /** Square promotional image (1200×1200 in public/images/programs/); also used as the page's share preview. */
+  image?: { src: string; alt: string };
 }
 
 export interface Stat {

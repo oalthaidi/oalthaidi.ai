@@ -121,6 +121,7 @@ export const en: SiteContent = {
         format: "In-person or remote workshop for organisations",
         availability: "Available to organisations on request",
         sessions: [],
+        image: { src: "/images/programs/distinguished-employee.jpg", alt: "Eng. Omar Al-Thaidi with the title of The Distinguished Employee in the Age of AI" },
       },
       {
         slug: "ai-digital-transformation",

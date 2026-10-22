@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CourseIcon } from "@/components/ui/CourseIcon";
@@ -36,6 +37,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       title: `${course.title} | ${meta.personName}`,
       description: course.summary,
       path,
+      ...(course.image ? { image: { url: course.image.src, width: 1200, height: 1200 } } : {}),
     }),
   };
 }
@@ -108,6 +110,17 @@ export default async function CoursePage({ params }: { params: Params }) {
           </div>
 
           <aside className="course-page__aside" aria-labelledby="dates-title">
+            {course.image ? (
+              <Image
+                className="course-page__cover"
+                src={course.image.src}
+                alt={course.image.alt}
+                width={1200}
+                height={1200}
+                sizes="(max-width: 860px) 100vw, 420px"
+                priority
+              />
+            ) : null}
             <div>
               <span className="mono">{programs.page.format}</span>
               <p>{course.format}</p>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { CourseIcon } from "@/components/ui/CourseIcon";
 import { SectionHead } from "@/components/ui/SectionHead";
@@ -32,6 +33,16 @@ function CourseCard({ course, locale, programs }: { course: Course; locale: Loca
         <span className="tag">{course.audience}</span>
         <CourseIcon name={course.icon} />
       </div>
+      {course.image ? (
+        <Image
+          className="course-card__cover"
+          src={course.image.src}
+          alt={course.image.alt}
+          width={1200}
+          height={1200}
+          sizes="(max-width: 760px) 100vw, 560px"
+        />
+      ) : null}
       <h3 className="course-card__title">
         <Link href={href}>{course.title}</Link>
       </h3>
