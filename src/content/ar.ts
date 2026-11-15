@@ -83,7 +83,7 @@ export const ar: SiteContent = {
       { value: 150, plus: true, label: "متدرب ومتدربة خلال ٢٠٢٦" },
       { value: 4, label: "مؤسسات درّبتها خلال ٢٠٢٦" },
       { value: 10, plus: true, label: "سنوات خبرة هندسية منذ ٢٠١٦" },
-      { value: 1, label: "ورقة بحث علمي منشورة" },
+      { value: 2, label: "ورقتا بحث علمي منشورتان" },
     ],
   },
   programs: {

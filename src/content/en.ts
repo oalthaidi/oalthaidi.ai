@@ -83,7 +83,7 @@ export const en: SiteContent = {
       { value: 150, plus: true, label: "People trained in 2026" },
       { value: 4, label: "Organisations trained in 2026" },
       { value: 10, plus: true, label: "Years of engineering experience since 2016" },
-      { value: 1, label: "Published research paper" },
+      { value: 2, label: "Published research papers" },
     ],
   },
   programs: {
